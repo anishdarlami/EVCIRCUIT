@@ -1,0 +1,38 @@
+.about-section {
+  width: 85%;
+  max-width: 1000px;
+  margin: 120px auto;
+  padding: 40px 20px;
+  background: #111c;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00eaff55;
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+  gap: 30px;
+}
+
+.about-row img {
+  width: 45%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00eaff55;
+}
+
+.about-text {
+  width: 50%;
+  text-align: left;
+}
+
+.about-text h2 {
+  color: #00eaff;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  color: #ddd;
+  line-height: 1.6;
+}

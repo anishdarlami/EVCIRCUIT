@@ -1,0 +1,53 @@
+.location-section, .search-section, .footer-about {
+  width: 85%;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background: #111c;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00eaff55;
+  text-align: center;
+}
+
+.location-section h2, .search-section h2, .footer-about h3 {
+  color: #00eaff;
+  margin-bottom: 10px;
+}
+
+.map-container iframe {
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00eaff55;
+}
+
+.footer-about ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-about li {
+  color: #1df2b3;
+  margin: 6px 0;
+}
+
+.search-section input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 10px;
+}
+
+.search-section button {
+  background: #00eaff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  background: #1df2b3;
+  box-shadow: 0 0 10px #1df2b3;
+}
