@@ -24,6 +24,5 @@ function searchStation() {
   } else {
     document.getElementById("searchResult").innerText =
       "Searching for EV stations near " + query + "...";
-    // Later you can integrate Google Maps API or your own database here
   }
 }
