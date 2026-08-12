@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* HEADER */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #00eaff;
+  background: rgba(0,0,0,0.95);
+}
+
+.topbar h1 span {
+  color: #00eaff;
+}
+
+nav a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #42fff6;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-section h2 {
+  color: #13b1fb;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-section .intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #ccc;
+  font-size: 1.1em;
+}
+
+/* GRID */
+.about-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.about-card {
+  width: 280px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #00eaff55;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00eaff88;
+}
+
+.about-card h3 {
+  color: #13b1fb;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  color: #ccc;
+  font-size: 0.95em;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #00eaff55;
+  color: #aaa;
+}

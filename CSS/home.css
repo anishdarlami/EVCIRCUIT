@@ -1,0 +1,156 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ff9900;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.topbar h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.topbar h1 span {
+ color: #00eaff;
+}
+
+nav a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #42fff6;
+}
+
+.hero {
+  height: 75vh;
+  background: url('location charging.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-text h2 {
+  color: #00eaff;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  color: #ddd;
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #ce7af8;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00eaff;
+  color: #000;
+}
+
+.info {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.info h2 {
+  color: #953fb2;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.info p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1em;
+}
+
+.image-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.image-card {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00eaff55;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00eaff88;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.image-card h3 {
+  color: #b23f47;
+  margin: 10px 0 5px;
+}
+
+.image-card p {
+  color: #ccc;
+  font-size: 0.95em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #00eaff55;
+  color: #aaa;
+  font-size: 0.9em;
+}

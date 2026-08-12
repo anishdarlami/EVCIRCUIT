@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EV Circuit | Facilities & Rewards</title>
+  <link rel="stylesheet" href="facilities.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>EV <span>CIRCUIT</span></h1>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="facilities.html">Benefits</a>
+    
+  </nav>
+</header>
+
+<section class="main">
+  <h2>Facilities, Rewards & Point Conversion</h2>
+  <p>Earn points every time you charge your EV. Convert them into rewards, discounts, or contribute to tree plantation.</p>
+
+  <div class="calc-box">
+    <h3>Point Calculator</h3>
+    <input type="number" id="points" placeholder="Enter your points">
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <div class="info-cards">
+    <div class="card">
+      <h3>Point Collection</h3>
+      <p>Earn 10 points for every charging session.</p>
+    </div>
+
+    <div class="card">
+      <h3>Rewards</h3>
+      <p>Redeem points for discounts, free charging, or partner offers.</p>
+    </div>
+
+    <div class="card">
+      <h3>Tree Contribution</h3>
+      <p>Every 10 points plants 1 tree through our green initiative.</p>
+    </div>
+  <div class="info-cards">
+</div>
+<div class="search-box">
+  <h3>Free Charging Finder</h3>
+  <input type="text" id="search" placeholder="Enter location or postcode">
+  <button onclick="findStation()">Find</button>
+  <div id="stationResult" class="result-box"></div>
+</div>
+
+</section>
+
+<footer>
+  <p>© 2026 EV Circuit | Powered by Sustainable Tech</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

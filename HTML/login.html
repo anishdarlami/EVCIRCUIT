@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EV Circuit - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<video autoplay muted loop id="bg-video">
+  <source src="vehicleev.mp4" type="video/mp4">
+</video>
+
+<header class="header">
+  <h1>EV CIRCUIT</h1>
+</header>
+
+<div class="box" id="loginBox">
+  <h2>Login</h2>
+  <input type="email" id="email" placeholder="Enter Email">
+  <div class="password-field">
+    <input type="password" id="password" placeholder="Enter Password">
+    <span class="toggle" id="togglePass" onclick="togglePassword()">👁️</span>
+  </div>
+  <label class="remember"><input type="checkbox" id="remember"> Remember Me</label>
+  <button class="btn btn-main" onclick="login()">Login</button>
+  <p class="links">
+    <a class="create" onclick="showSignup()">Create Account</a><br>
+    <a onclick="showForget()">Forgot Password?</a>
+  </p>
+</div>
+
+<div class="box d-none" id="signupBox">
+  <h2>Create Account</h2>
+  <input type="text" id="signup-name" placeholder="Full Name">
+  <input type="email" id="signup-email" placeholder="Email">
+  <input type="password" id="signup-pass" placeholder="Create Password">
+  <button class="btn btn-alt" onclick="signup()">Sign Up</button>
+  <p><a onclick="showLogin()">Back to Login</a></p>
+</div>
+
+<div class="box d-none" id="forgetBox">
+  <h2>Reset Password</h2>
+  <p>Select method:</p>
+  <select id="reset-method" onchange="toggleResetFields()">
+    <option value="email">Via Email</option>
+    <option value="phone">Via Phone</option>
+  </select>
+
+  <div id="emailField" class="d-none">
+    <input type="email" id="reset-email" placeholder="Enter Email">
+  </div>
+
+  <div id="phoneField" class="d-none">
+    <input type="tel" id="reset-phone" placeholder="Enter Phone Number">
+  </div>
+
+  <button class="btn btn-alt" onclick="resetPassword()">Reset Password</button>
+  <p><a onclick="showLogin()">Back to Login</a></p>
+</div>
+
+<footer class="footer">
+  <p>© 2026 EV Circuit | Powered by Sustainable Tech</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
