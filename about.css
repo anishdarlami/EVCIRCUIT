@@ -1,11 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 body {
+  overflow-x: hidden; 
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #000;
   color: #fff;
 }
 
-/* HEADER */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -31,7 +38,6 @@ nav a.active {
   color: #42fff6;
 }
 
-/* ABOUT SECTION */
 .about-section {
   text-align: center;
   padding: 60px 20px;
@@ -50,7 +56,6 @@ nav a.active {
   font-size: 1.1em;
 }
 
-/* GRID */
 .about-grid {
   display: flex;
   justify-content: center;
@@ -83,10 +88,15 @@ nav a.active {
   font-size: 0.95em;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #00eaff55;
   color: #aaa;
+}
+@media (max-width: 768px) {
+  .box, .card, container, input, button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }

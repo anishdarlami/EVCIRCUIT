@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 body {
+   overflow-x: hidden; 
   background: #000;
   color: #ccefff;
   font-family: 'Segoe UI', sans-serif;
@@ -122,4 +131,10 @@ footer {
   color: #fff;
   border-top: 1px solid #00eaff55;
   margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .box, .card, container, input, button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }

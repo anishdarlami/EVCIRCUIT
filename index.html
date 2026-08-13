@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EV Circuit - Login</title>
   <link rel="stylesheet" href="login.css">
 </head>
@@ -36,7 +37,7 @@
   <input type="email" id="signup-email" placeholder="Email">
   <input type="password" id="signup-pass" placeholder="Create Password">
   <button class="btn btn-alt" onclick="signup()">Sign Up</button>
-  <p><a onclick="showLogin()">Back to Login</a></p>
+  <p class="links"><a onclick="showLogin()">Back to Login</a></p>
 </div>
 
 <div class="box d-none" id="forgetBox">
@@ -47,7 +48,7 @@
     <option value="phone">Via Phone</option>
   </select>
 
-  <div id="emailField" class="d-none">
+  <div id="emailField">
     <input type="email" id="reset-email" placeholder="Enter Email">
   </div>
 
@@ -56,7 +57,7 @@
   </div>
 
   <button class="btn btn-alt" onclick="resetPassword()">Reset Password</button>
-  <p><a onclick="showLogin()">Back to Login</a></p>
+  <p class="links"><a onclick="showLogin()">Back to Login</a></p>
 </div>
 
 <footer class="footer">

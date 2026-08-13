@@ -1,8 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
+   overflow-x: hidden; 
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #000;
@@ -153,4 +163,10 @@ footer {
   border-top: 1px solid #00eaff55;
   color: #aaa;
   font-size: 0.9em;
+}
+@media (max-width: 768px) {
+  .box, .card, container, input, button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }

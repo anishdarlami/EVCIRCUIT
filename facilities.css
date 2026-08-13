@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 body {
+   overflow-x: hidden; 
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #000;
@@ -183,4 +192,9 @@ footer {
 .search-box:hover {
   box-shadow: 0 0 15px #00eaff55;
 }
-
+@media (max-width: 768px) {
+  .box, .card, container, input, button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}

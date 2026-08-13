@@ -1,8 +1,16 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 
 body {
+  overflow-x: hidden;
   margin: 0;
-  font-family: Poppins, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
   background: #000;
 }
@@ -32,7 +40,7 @@ body {
 
 .footer {
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
   font-size: 14px;
   color: #aaa;
@@ -43,14 +51,14 @@ body {
   width: 320px;
   padding: 25px;
   position: absolute;
-  top: 52%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid #00eaff;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 15px #00eaff55;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
 }
 
 input, select {
@@ -75,8 +83,9 @@ input:focus, select:focus {
 .password-field .toggle {
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 18px;
   cursor: pointer;
+  user-select: none;
 }
 
 .btn {
@@ -95,7 +104,7 @@ input:focus, select:focus {
 
 .btn:hover {
   opacity: 0.9;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .links {
@@ -104,31 +113,32 @@ input:focus, select:focus {
 }
 
 .links a {
+  color: #d44ad4;
   text-decoration: none;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.links a.create {
-   color: #d44ad4;
-}
-
-.links a.create:hover {
+.links a:hover {
   color: #7ac6a6;
 }
 
-.links a:not(.create) {
-   color: #d44ad4;
-}
-
-.links a:not(.create):hover {
-   color: #7ac6a6;
-  
-}
-
 .remember {
+  display: block;
   text-align: left;
   font-size: 14px;
   margin-top: 5px;
 }
 
-.d-none { display: none; }
+.remember input {
+  width: auto;
+  margin-right: 5px;
+}
+
+.d-none { display: none !important; }
+
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+  }
+}

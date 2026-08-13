@@ -1,6 +1,3 @@
-const correctEmail = "circuitev@gmail.com";
-const correctPassword = "12345";
-
 const loginBox = document.getElementById("loginBox");
 const signupBox = document.getElementById("signupBox");
 const forgetBox = document.getElementById("forgetBox");
@@ -23,107 +20,91 @@ function showForget() {
   forgetBox.classList.remove("d-none");
 }
 
+function togglePassword() {
+  const pass = document.getElementById("password");
+  pass.type = pass.type === "password" ? "text" : "password";
+}
+
 function toggleResetFields() {
   const method = document.getElementById("reset-method").value;
   document.getElementById("emailField").classList.toggle("d-none", method !== "email");
   document.getElementById("phoneField").classList.toggle("d-none", method !== "phone");
 }
 
-function togglePassword() {
-  const pass = document.getElementById("password");
-  pass.type = pass.type === "password" ? "text" : "password";
+function signup() {
+  const email = document.getElementById("signup-email").value.trim();
+  const pass = document.getElementById("signup-pass").value.trim();
+
+  if (!email || !pass) return alert("Please fill all fields");
+
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPass", pass);
+
+  alert("Account created! You can now log in.");
+  showLogin();
+  if (document.getElementById("email")) document.getElementById("email").value = email;
 }
 
 function login() {
   const email = document.getElementById("email").value.trim();
   const pass = document.getElementById("password").value.trim();
-  const remember = document.getElementById("remember").checked;
 
   if (!email || !pass) return alert("Please fill all fields");
 
-  const savedEmail = localStorage.getItem("signupEmail");
-  const savedPass = localStorage.getItem("signupPass");
+  const savedEmail = localStorage.getItem("userEmail");
+  const savedPass = localStorage.getItem("userPass");
 
-  if ((email === correctEmail && pass === correctPassword) ||
-      (email === savedEmail && pass === savedPass)) {
+  if (!savedEmail) {
+    alert("No account found. Please create an account first.");
+  } else if (email === savedEmail && pass === savedPass) {
     alert("Login successful!");
-    if (remember) {
-      localStorage.setItem("savedEmail", email);
-      localStorage.setItem("savedPass", pass);
-    }
     window.location.href = "home.html";
-  } else alert("Incorrect email or password");
-}
-
-function signup() {
-  const name = document.getElementById("signup-name").value.trim();
-  const email = document.getElementById("signup-email").value.trim();
-  const pass = document.getElementById("signup-pass").value.trim();
-
-  if (!name || !email || !pass) return alert("Please fill all fields");
-
-  localStorage.setItem("signupEmail", email);
-  localStorage.setItem("signupPass", pass);
-  alert("Account created successfully!");
-  showLogin();
+  } else {
+    alert("Incorrect email or password");
+  }
 }
 
 function resetPassword() {
   const method = document.getElementById("reset-method").value;
-  if (!method) return alert("Please choose a reset method");
-  alert(`Password reset via ${method === "email" ? "email" : "phone"} initiated.`);
-  showLogin();
-}
+  const inputVal = method === "email" 
+    ? document.getElementById("reset-email").value.trim() 
+    : document.getElementById("reset-phone").value.trim();
+    
+  const savedEmail = localStorage.getItem("userEmail");
 
-function calculate() {
-  const p = Number(document.getElementById("points").value);
+  if (!inputVal) return alert("Please enter your email or phone number");
+  if (!savedEmail) return alert("No registered account found on this browser");
 
-  if (isNaN(p) || p <= 0) {
-    document.getElementById("result").innerHTML = "Please enter valid points.";
-    return;
+  const code = Math.floor(1000 + Math.random() * 9000);
+  alert(`Your reset code is: ${code}`);
+
+  const userCode = prompt("Enter the 4-digit code:");
+  if (userCode === String(code)) {
+    const newPass = prompt("Enter new password:");
+    if (newPass && newPass.trim() !== "") {
+      localStorage.setItem("userPass", newPass.trim());
+      alert("Password updated! Please log in.");
+      showLogin();
+    }
+  } else {
+    alert("Incorrect code");
   }
-
-  const value = (p * 0.10).toFixed(2);
-  const trees = Math.floor(p / 10);
-  const rewards = p >= 200 ? "Eligible for 10% charging discount" : "Keep collecting for rewards";
-
-  document.getElementById("result").innerHTML = `
-    <p><strong>Points:</strong> ${p}</p>
-    <p><strong>Value:</strong> £${value}</p>
-    <p><strong>Rewards:</strong> ${rewards}</p>
-    <p><strong>Tree Contribution:</strong> ${trees} tree(s)</p>
-  `;
 }
-
 
 function findStation() {
-  let place = document.getElementById("search").value.toLowerCase();
-  let box = document.getElementById("stationResult");
+  const place = document.getElementById("search").value.toLowerCase().trim();
+  const box = document.getElementById("stationResult");
 
-  const freeStations = {
-    "dartford": "GreenPark EV Hub,DA1 1BP,Free Fast Charging",
-    "da1 1bp": "GreenPark EV Hub,Free Fast Charging",
-
-    "princes road": "EcoCharge Station,DA1 3HJ,Free Charging",
-    "da1 3hj": "EcoCharge Station,Free Charging",
-
-    "temple hill": "VoltFree Station,DA1 5LR,Free Fast Charging",
-    "da1 5lr": "VoltFree Station,Free Fast Charging",
-
-    "retail park": "BlueGrid EV Point,DA2 6QL,Free Slow Charging",
-    "da2 6ql": "BlueGrid EV Point,Free Slow Charging",
-
-    "stone": "ChargeGo Station,DA2 6FD,Free Standard Charging",
-    "da2 6fd": "ChargeGo Station,Free Standard Charging",
-
-    "greenhithe": "RiverCharge Hub,DA9 9BT,Free Fast Charging",
-    "da9 9bt": "RiverCharge Hub,Free Fast Charging",
-
-    "erith": "EcoVolt Station,DA8 1QX,Free Slow Charging",
-    "da8 1qx": "EcoVolt Station,Free Slow Charging"
+  const stations = {
+    "dartford": "GreenPark EV Hub, DA1 1BP",
+    "da1 1bp": "GreenPark EV Hub, DA1 1BP",
+    "greenhithe": "RiverCharge Hub, DA9 9BT",
+    "da9 9bt": "RiverCharge Hub, DA9 9BT",
+    "erith": "EcoVolt Station, DA8 1QX",
+    "da8 1qx": "EcoVolt Station, DA8 1QX"
   };
 
-  box.innerHTML = freeStations[place]
-    ? "🔌 " + freeStations[place]
-    : "❌ No free charging station found.";
+  if (box) {
+    box.innerHTML = stations[place] ? "🔌 " + stations[place] : "❌ No station found.";
+  }
 }
