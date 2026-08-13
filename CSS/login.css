@@ -135,7 +135,9 @@ input:focus, select:focus {
   margin-right: 5px;
 }
 
-.d-none { display: none !important; }
+.d-none { 
+  display: none !important; 
+}
 
 @media (max-width: 768px) {
   .box {

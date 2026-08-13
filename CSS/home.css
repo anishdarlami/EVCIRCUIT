@@ -53,7 +53,7 @@ nav a.active {
 
 .hero {
   height: 75vh;
-  background: url('location charging.png') center/cover no-repeat;
+  background: url('../IMAGES/location charging.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

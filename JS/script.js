@@ -1,23 +1,19 @@
-const loginBox = document.getElementById("loginBox");
-const signupBox = document.getElementById("signupBox");
-const forgetBox = document.getElementById("forgetBox");
-
 function showLogin() {
-  loginBox.classList.remove("d-none");
-  signupBox.classList.add("d-none");
-  forgetBox.classList.add("d-none");
+  document.getElementById("loginBox").classList.remove("d-none");
+  document.getElementById("signupBox").classList.add("d-none");
+  document.getElementById("forgetBox").classList.add("d-none");
 }
 
 function showSignup() {
-  loginBox.classList.add("d-none");
-  signupBox.classList.remove("d-none");
-  forgetBox.classList.add("d-none");
+  document.getElementById("loginBox").classList.add("d-none");
+  document.getElementById("signupBox").classList.remove("d-none");
+  document.getElementById("forgetBox").classList.add("d-none");
 }
 
 function showForget() {
-  loginBox.classList.add("d-none");
-  signupBox.classList.add("d-none");
-  forgetBox.classList.remove("d-none");
+  document.getElementById("loginBox").classList.add("d-none");
+  document.getElementById("signupBox").classList.add("d-none");
+  document.getElementById("forgetBox").classList.remove("d-none");
 }
 
 function togglePassword() {
@@ -42,7 +38,9 @@ function signup() {
 
   alert("Account created! You can now log in.");
   showLogin();
-  if (document.getElementById("email")) document.getElementById("email").value = email;
+  if (document.getElementById("email")) {
+    document.getElementById("email").value = email;
+  }
 }
 
 function login() {
@@ -91,8 +89,33 @@ function resetPassword() {
   }
 }
 
+function calculate() {
+  const pointsInput = document.getElementById("points");
+  const resultBox = document.getElementById("result");
+
+  if (!pointsInput || !resultBox) return;
+
+  const points = parseFloat(pointsInput.value);
+
+  if (isNaN(points) || points <= 0) {
+    resultBox.innerHTML = "<span style='color: #ff4d4d;'>⚠️ Please enter a valid number of points.</span>";
+    return;
+  }
+
+  const discount = (points / 1000).toFixed(2);
+  const trees = Math.floor(points / 10);    
+
+  resultBox.innerHTML = `
+    <p style="margin: 5px 0; color: #00eaff;">💰 Point worth: <strong>£${discount}</strong></p>
+    <p style="margin: 5px 0; color: #a1ff42;">🌱 Trees Planted: <strong>${trees} trees</strong></p>
+  `;
+}
+
 function findStation() {
-  const place = document.getElementById("search").value.toLowerCase().trim();
+  const searchInput = document.getElementById("search");
+  if (!searchInput) return;
+
+  const place = searchInput.value.toLowerCase().trim();
   const box = document.getElementById("stationResult");
 
   const stations = {

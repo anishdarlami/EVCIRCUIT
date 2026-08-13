@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EV Circuit - Login</title>
-  <link rel="stylesheet" href="login.css">
+  <!-- Fixed CSS path -->
+  <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
 
 <video autoplay muted loop id="bg-video">
-  <source src="vehicleev.mp4" type="video/mp4">
+  <source src="../VIDEO/vehicleev.mp4" type="video/mp4">
 </video>
 
 <header class="header">
@@ -23,7 +24,9 @@
     <input type="password" id="password" placeholder="Enter Password">
     <span class="toggle" id="togglePass" onclick="togglePassword()">👁️</span>
   </div>
-  <label class="remember"><input type="checkbox" id="remember"> Remember Me</label>
+  <label class="remember">
+    <input type="checkbox" id="remember"> Remember Me
+  </label>
   <button class="btn btn-main" onclick="login()">Login</button>
   <p class="links">
     <a class="create" onclick="showSignup()">Create Account</a><br>
@@ -64,6 +67,6 @@
   <p>© 2026 EV Circuit | Powered by Sustainable Tech</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="../JS/script.js"></script>
 </body>
 </html>
