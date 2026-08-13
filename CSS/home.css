@@ -12,7 +12,7 @@ html {
 }
 
 body {
-   overflow-x: hidden; 
+  overflow-x: hidden; 
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #000;
@@ -35,7 +35,7 @@ body {
 }
 
 .topbar h1 span {
- color: #00eaff;
+  color: #00eaff;
 }
 
 nav a {
@@ -51,9 +51,10 @@ nav a.active {
   color: #42fff6;
 }
 
+/* --- FIXED BACKGROUND IMAGE PATH HERE --- */
 .hero {
   height: 75vh;
-  background: url('../IMAGES/location charging.png') center/cover no-repeat;
+  background: url('../IMAGES/locationcharging.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,6 +165,7 @@ footer {
   color: #aaa;
   font-size: 0.9em;
 }
+
 @media (max-width: 768px) {
   .box, .card, container, input, button {
     max-width: 100% !important;
